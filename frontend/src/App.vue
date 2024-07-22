@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style>
+body, button, input, textarea {
+  font-family: 'Inter', sans-serif;
+}
 </style>
