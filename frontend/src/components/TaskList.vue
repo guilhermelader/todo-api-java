@@ -36,7 +36,7 @@
         <form @submit.prevent="isEditMode ? updateTask() : submitNewTask()">
           <div class="mb-4">
             <label class="block text-gray-700">Deadline</label>
-            <input v-model="taskForm.deadline" type="text" placeholder="dd-MM-yyyy" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required>
+            <input v-model="taskForm.deadline" type="text" placeholder="dd-MM-yyyy" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required mas>
           </div>
           <div class="mb-4">
             <label class="block text-gray-700">Title</label>
@@ -128,12 +128,12 @@ export default {
       const formattedDeadline = this.formatDateToISO(this.taskForm.deadline);
 
       if (!moment(formattedDeadline).isValid()) {
-        alert('Data inválida. Por favor, insira uma data no formato dd-MM-yyyy.');
+        alert('Invalid date, please insert date in format dd-mm-yyy');
         return;
       }
 
       if (moment(formattedDeadline).isBefore(moment().startOf('day'))) {
-        alert('A data deve ser no presente ou no futuro.');
+        alert('Date must be in present or future');
         return;
       }
 
@@ -161,12 +161,12 @@ export default {
       const formattedDeadline = this.formatDateToISO(this.taskForm.deadline);
 
       if (!moment(formattedDeadline).isValid()) {
-        alert('Data inválida. Por favor, insira uma data no formato dd-MM-yyyy.');
+        alert('Invalid date, please insert date in format dd-mm-yyy');
         return;
       }
 
       if (moment(formattedDeadline).isBefore(moment().startOf('day'))) {
-        alert('A data deve ser no presente ou no futuro.');
+        alert('Date must be in present or future');
         return;
       }
 
